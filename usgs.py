@@ -13,7 +13,7 @@ nsdq = pd.read_csv('companylist.csv')
 nsdq.set_index('Symbol', inplace=True)
 options = []
 for tic in nsdq.index:
-    options.append({'label':'{} {}'.format(tic,nsdq.loc[tic]['Name']), 'value':tic})
+    options.append({'label':'{} {} {}'.format(tic,nsdq.loc[tic]['Name'],nsdq.loc[tic]['Sector']), 'value':tic})
 
 app.layout = html.Div([
     html.H1('Stock Ticker Dashboard'),
